@@ -12,7 +12,7 @@ function Header () {
             </h1>
             <div className="Header-checkout">
                 <Link to="/checkout">
-                    Chekout
+                    <i className="fas fa-shopping-basket fa-2x"/>
                 </Link>
             </div>
         </header>
