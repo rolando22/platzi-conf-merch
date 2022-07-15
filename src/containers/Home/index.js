@@ -1,10 +1,12 @@
 import React from "react";
+import { useAppContext } from "../../hooks/useAppContext";
 import { Products } from "../../components";
-import initialState from "../../initialState";
 
 function Home () {
+    const { state: { products } } = useAppContext();
+
     return (
-        <Products products={initialState.products}/>
+        <Products products={products}/>
     );
 };
 
