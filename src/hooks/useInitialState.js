@@ -18,10 +18,18 @@ function useInitialState () {
         });
     };
 
+    const addToBuyers = (payload) =>  {
+        setState({
+            ...state,
+            buyers: [...state.buyers, payload],
+        });
+    };
+
     return {
         state,
         addToCart,
         removeFromCart,
+        addToBuyers,
     };
 };
 
