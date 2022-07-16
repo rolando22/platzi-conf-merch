@@ -1,16 +1,18 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppContext } from "../../hooks/useAppContext";
 import "./Information.css";
 
 function Information () {
     const { state: { cart }, addToBuyers } = useAppContext();
     const form  = useRef(null);
+    const navigate = useNavigate();
 
     const handleSubmit = () => {
         const formData = new FormData(form.current);
         const buyer = Object.fromEntries(formData);
         addToBuyers(buyer);
+        navigate("/checkout/payment");
     };
 
     return (
