@@ -4,14 +4,14 @@ import { useAppContext } from "../../hooks/useAppContext";
 import "./Information.css";
 
 function Information () {
-    const { state: { cart }, addToBuyers } = useAppContext();
+    const { state: { cart }, addToBuyer } = useAppContext();
     const form  = useRef(null);
     const navigate = useNavigate();
 
     const handleSubmit = () => {
         const formData = new FormData(form.current);
         const buyer = Object.fromEntries(formData);
-        addToBuyers(buyer);
+        addToBuyer(buyer);
         navigate("/checkout/payment");
     };
 
