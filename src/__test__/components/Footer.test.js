@@ -1,10 +1,14 @@
 import React from "react";
-import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 import { Footer } from "../../components";
 
 describe('<Footer />', () => {
+    const footer = shallow(<Footer />);
+
     test('Render del componente Footer', () => {
-        const footer = mount(<Footer />);
         expect(footer.length).toEqual(1);
+    });
+    test('Render del título', () => {
+        expect(footer.find('.Footer-title').text()).toEqual('Platzi Conf Merch');
     });
 });
