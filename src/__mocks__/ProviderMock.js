@@ -1,15 +1,18 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { AppProvider } from "../../context/AppContext";
+import { Layout } from "../components";
+import { AppProvider } from "../context/AppContext";
 
-function ProvideMock ({ children }) {
+function ProvideMock (props) {
     return (
         <AppProvider>
             <BrowserRouter>
-                {children}
+                <Layout>
+                    {props.children}
+                </Layout>
             </BrowserRouter>
         </AppProvider>
     );
 };
 
-export { ProvideMock };
+export default ProvideMock;
