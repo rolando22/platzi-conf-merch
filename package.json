@@ -36,6 +36,7 @@
     "webpack-dev-server": "^4.9.3"
   },
   "jest": {
+    "verbose": true,
     "setupFilesAfterEnv": [
       "<rootDir>/src/__test__/setupTest.js"
     ],
